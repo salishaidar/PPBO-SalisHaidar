@@ -22,6 +22,5 @@ public class Entitiy {
     public void hit(int dmg) {
         this.hp -= dmg;
     }
-
-
 }
+

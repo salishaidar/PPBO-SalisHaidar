@@ -11,7 +11,7 @@ public class Player extends Entitiy {
     }
 
     public void interact(Merchant merchant) {
-        if (super.getHp() > 0) {
+        if (getHp() > 0) {
             if (merchant.getHp() > 0) {
                 merchant.displayItems();
             } else {
@@ -22,14 +22,11 @@ public class Player extends Entitiy {
         }
     }
 
-    public void test() {
-        System.out.println(super.getHp());
-    }
-
     public void attack(Merchant merchant) {
         if (merchant.getHp() > 0) {
             merchant.hit();
             System.out.println("Merchant : hey heyy, ngapain nyerang");
+
             if (merchant.getHp() <= 0) {
                 System.out.println("Merchant : dah lah males jualan");
             }
@@ -37,11 +34,16 @@ public class Player extends Entitiy {
     }
 
     public void attack(Zombie zombie) {
-        if (zombie.getHp() > 0) {
-            zombie.hit();
-            System.out.println("Zombie : GRAAA!");
-            if (zombie.getHp() <= 0) {
-                System.out.println("# ZOMBIE MATI");
+        if (getHp() > 0) {
+            if (zombie.getHp() > 0) {
+                zombie.hit();
+                System.out.println("Zombie : GRAAA!");
+
+                if (zombie.getHp() <= 0) {
+                    System.out.println("# ZOMBIE MATI");
+                }
+            } else {
+                System.out.println("# ZOMBIE SUDAH MATI");
             }
         } else {
             System.out.println("# PLAYER SUDAH MATI");

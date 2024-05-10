@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class Vehicle {
     protected String brand;
     protected double rentalPrice;
@@ -18,7 +16,6 @@ public class Vehicle {
         }
         return discount;
     }
-
-
 }
+
 

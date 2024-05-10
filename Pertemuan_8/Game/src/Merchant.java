@@ -21,3 +21,4 @@ public class Merchant extends Entitiy{
         }
     }
 }
+

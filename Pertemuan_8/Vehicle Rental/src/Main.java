@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Car innova = new Car("Innova Reborn", 2015, 500.0, CarType.PREMIUM_CAR);
@@ -22,3 +20,4 @@ public class Main {
 
     }
 }
+

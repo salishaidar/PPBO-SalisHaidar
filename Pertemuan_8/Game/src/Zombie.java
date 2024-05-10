@@ -13,7 +13,7 @@ public class Zombie extends Entitiy{
         System.out.println("ZOMBIE DENGAN TIPE : " + type + ", DAN LEVEL:" + super.getLevel());
     }
 
-    private void hit(Player player) {
+    private void ZombieHit(Player player) {
         switch (type) {
             case MEELE -> player.hit(20);
             case RANGED -> player.hit(15);
@@ -21,12 +21,19 @@ public class Zombie extends Entitiy{
     }
 
     public void attack(Player player) {
-        if (player.getHp() > 0 && super.getHp() > 0) {
-            hit(player);
-            System.out.println("Player : UGHH");
-            if (player.getHp() <= 0) {
-                System.out.println("# YOU DIE, GAME OVER");
+        if (player.getHp() > 0) {
+            if (getHp() > 0) {
+                ZombieHit(player);
+                System.out.println("Player : UGHH");
+                if (player.getHp() <= 0) {
+                    System.out.println("# YOU DIE, GAME OVER");
+                }
+            } else {
+                System.out.println("# ZOMBIE SUDAH MATI");
             }
+        } else {
+            System.out.println("# PLAYER SUDAH MATI");
         }
     }
 }
+
